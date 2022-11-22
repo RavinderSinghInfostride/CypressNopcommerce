@@ -11,6 +11,7 @@ class HomePage {
     logoutLink = "//a[@class='ico-logout']"
     searchInputBox = "//input[contains(@class,'search-box-text')]"
     searchButton = "//button[contains(@class,'search-box-button')]"
+    newsDetailsLink = "(//a[@class='read-more'])[1]"
 
     navigateToRegisterPage() {
         cy.xpath(this.registerPageLink).click()
@@ -32,6 +33,10 @@ class HomePage {
     searchProduct() {
         cy.xpath(this.searchInputBox).type(searchProductData.productToSearch)
         cy.xpath(this.searchButton).click()
+    }
+
+    navigateToNewsDesciptionPage() {
+        cy.xpath(this.newsDetailsLink).click()
     }
 }
 export default HomePage

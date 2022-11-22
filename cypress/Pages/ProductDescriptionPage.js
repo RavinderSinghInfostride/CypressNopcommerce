@@ -7,7 +7,7 @@ class ProductDescriptionPage {
 
     addProductToWishlist() {
         cy.xpath(this.productAddToWishlistButton).click()
-        cy.xpath(this.productAddedNotification).wait(2000).should('have.text' , 'The product has been added to your wishlist')
+        cy.xpath(this.productAddedNotification).wait(2000).should('have.text', 'The product has been added to your wishlist')
     }
 
     navigateToWishlistPage() {
@@ -16,7 +16,7 @@ class ProductDescriptionPage {
 
     addProductToCart() {
         cy.xpath(this.productAddToCartButton).click()
-        cy.xpath(this.productAddedNotification).wait(2000).should('have.text' , 'The product has been added to your shopping cart')
+        cy.xpath(this.productAddedNotification).wait(2000).should('have.text', 'The product has been added to your shopping cart')
     }
 
     navigateToShoppingCartPage() {

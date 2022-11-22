@@ -19,7 +19,7 @@ class CheckoutPage {
     orderSuccessfullyPlacedMessage = "//strong[contains(text(),'Your order has been successfully processed!')]"
     orderCompleteContinueButton = "//button[contains(@class,'order-completed-continue-button')]"
 
-    fillBillingAddressDetails() {
+    completeCheckoutProcess() {
         cy.xpath(this.countryDropdown).select("133")
         cy.xpath(this.cityInputBox).type(checkoutDetailsData.city)
         cy.xpath(this.address1InputBox).type(checkoutDetailsData.address1)
@@ -30,7 +30,8 @@ class CheckoutPage {
         cy.xpath(this.paymentMethodContinueButton).click()
         cy.xpath(this.paymentInformationContinueButton).click()
         cy.xpath(this.confirmOrderContinueButton).click()
-        cy.xpath(this.orderSuccessfullyPlacedMessage).should('have.text','Your order has been successfully processed!')
+        cy.xpath(this.orderSuccessfullyPlacedMessage).should('have.text', 'Your order has been successfully processed!')
+        cy.screenshot()
         cy.xpath(this.orderCompleteContinueButton).click()
     }
 }

@@ -29,8 +29,9 @@ class RegisterAndLoginPage {
         cy.xpath(this.passwordInputBox).type(registrationData.password)
         cy.xpath(this.confirmPasswordInputBox).type(registrationData.password)
         cy.xpath(this.registerButton).click()
-        cy.xpath(this.registerSuccessfullVerification).should('have.text','Your registration completed')
+        cy.xpath(this.registerSuccessfullVerification).should('have.text', 'Your registration completed')
         cy.xpath(this.afterRegistrationContinueLink).click()
+        cy.screenshot()
     }
 
     login() {

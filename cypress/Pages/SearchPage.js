@@ -3,6 +3,7 @@ class SearchPage {
 
     searchedProductVerification() {
         cy.xpath(this.searchedProductVerify).should('have.text', 'Apple MacBook Pro 13-inch')
+        cy.screenshot()
     }
 }
 export default SearchPage

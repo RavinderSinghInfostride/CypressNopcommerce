@@ -1,5 +1,3 @@
-import RegisterAndLoginPage from '../../Pages/RegisterAndLoginPage'
-const registerAndLoginPage = new RegisterAndLoginPage
 import HomePage from '../../Pages/HomePage'
 const homePage = new HomePage
 import ComputersPage from '../../Pages/ComputersPage'
@@ -14,12 +12,13 @@ import CheckoutPage from '../../Pages/CheckoutPage'
 const checkoutPage = new CheckoutPage
 
 it('To verify user is able to add product to cart and checkout', () => {
-    cy.RegisterAndLogin() 
+    cy.RegisterAndLogin()
     homePage.navigateToComputersPage()
     computersPage.navigateToNotebooksPage()
     notebooksPage.navigateToProductDescriptionPage()
     productDescriptionPage.addProductToCart()
     productDescriptionPage.navigateToShoppingCartPage()
     cartPage.navigateToCheckoutPage()
-    checkoutPage.fillBillingAddressDetails()
+    checkoutPage.completeCheckoutProcess()
+    cy.UserLogout()
 })
